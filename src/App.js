@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.jpg';
+import ru from './ru.jpg';
+import us from './us.jpg';
+import './store';
+
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="Containter">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <img src={logo} className="App-logo" alt="logo" />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="Langs">
+          <img src={ru} className="Ru-lang" alt="ru" />
+          <img src={us} className="Us-lang" alt="us" />
+        </div>
       </header>
+
+     
     </div>
   );
 }
