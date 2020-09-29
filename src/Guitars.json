@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "title": "ESP-LTD",
+    "image": "https://images.reverb.com/image/upload/s--nMKPGpqk--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1471093714/ehqyngx9djfot4k8itsu.jpg",
+    "price": 80000
+  },
+  {
+    "id": 1,
+    "title": "IBANEZ RG8-WH 8-STRING RG",
+    "image": "https://www.muztorg.ru/files/1yo/u1e/kjc/6ck/0ks/wos/wgw/gwc/8/1you1ekjc6ck0kswoswgwgwc8.jpg",
+    "price": 42000
+  }
+]

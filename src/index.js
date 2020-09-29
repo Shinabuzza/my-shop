@@ -5,20 +5,11 @@ import App from './App';
 import { Provider } from 'react-redux';
 import createStore from './store';
 
+
+
 const store = createStore();
 
-setTimeout(function () {
-  store.dispatch({
-    type:'SET_GUITARS',
-    payload:[
-      {
-        id:0,
-        title:'ESP-8string'
-      }
-    ]
-  });
-  
-},1000);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

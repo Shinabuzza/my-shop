@@ -12,9 +12,10 @@
     "react-i18next": "^9.0.10",
     "react-jss": "^10.4.0",
     "react-redux": "^7.2.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.3",
     "redux": "^1.0.1",
     "redux-devtools": "^3.7.0",
+    "redux-form": "^8.3.6",
     "redux-logger": "^3.0.6",
     "thunk": "0.0.1"
   },

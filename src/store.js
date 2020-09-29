@@ -3,7 +3,7 @@ import logger from 'redux-logger';
 
 import rootReducer from './reducers';
 
-export default() =>{
-    const store = createStore(rootReducer,applyMiddleware(logger))
+export default () => {
+    const store = createStore(rootReducer, applyMiddleware(logger))
     return store;
 };

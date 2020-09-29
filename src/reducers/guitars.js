@@ -1,26 +1,21 @@
 const initialState = {
-    guitars: [{
-        id:0,
-        title:'ESP-8sting',
-        
-    }],
-    ids: [],
+  isReady: false,
+  guitars: null,
 };
-export default (state= initialState, action) => {
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_GUITARS':
+      return {
+        ...state,
+        guitars: action.payload,
 
-    switch (action.type) {
-        case 'SET_GUITARS':
-            return {
-                guitars: action.payload
-            };
-        case 'ADD_GUITARS':
-            return {
-                guitars: [
-                    ...state.guitar,
-                    action.payload
-                ]
-            };
-        default:
-            return state;
-    }
+      };
+    case 'SET_IS_READY':
+      return {
+        ...state,
+        isReady: action.payload
+      };
+    default:
+      return state;
+  }
 };
