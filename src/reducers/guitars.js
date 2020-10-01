@@ -1,13 +1,13 @@
 const initialState = {
   isReady: false,
-  guitars: null,
+  items: null
 };
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_GUITARS':
       return {
         ...state,
-        guitars: action.payload,
+        items: action.payload,
 
       };
     case 'SET_IS_READY':

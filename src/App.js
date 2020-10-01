@@ -2,41 +2,41 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import { setGuitars } from './actions/guitars';
-import logo from './logo.jpg';
-import ru from './ru.jpg';
-import us from './us.jpg';
+import Menu from './components/menu'
 import guitars from './reducers/guitars';
+import { Container } from 'semantic-ui-react';
+import axios from 'axios';
+import GuitarCard from './components/GuitarCard';
+
 
 class App extends Component {
-  render() {
-    const { guitars } = this.props.guitars;
+  componentDidMount() {
     const { setGuitars } = this.props;
-    const newGuitars = [
-      {
-        id: 0,
-        title: 'Shopping Cart'
-      }
-    ];
-    return (
-      <div className="Containter">
+    axios.get('/guitars.json').then(({ data }) => {
+      setGuitars(data)
+    });
+  }
 
-        <header className="App-header">
-          <p>
-            <img src={logo} className="App-logo" alt="logo" />
-          </p>
-          <div className="Langs">
-            <img src={ru} className="Ru-lang" alt="ru" />
-            <img src={us} className="Us-lang" alt="us" />
-          </div>
-        </header>
-      </div>
+
+
+
+  render() {
+    const { guitars, isReady } = this.props;
+    return (
+      <Container>
+        <Menu />
+        <ul>
+          {!isReady
+            ? 'Загрузка...'
+            : guitars.map(guitar => <GuitarCard {...guitar} />)}</ul>
+      </Container >
 
     );
   }
 }
 const mapStateToProps = state => ({
-  guitars: guitars.guitars,
-  ...state
+  guitars: guitars.items,
+  isReady: guitars.isReady
 });
 const mapDispatchToProps = dispatch => ({
   setGuitars: guitars => dispatch(setGuitars(guitars))
